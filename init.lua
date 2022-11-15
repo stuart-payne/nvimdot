@@ -1,3 +1,2 @@
-require("stuart.test")
-
-print("hello")
+require("stuart.cfg")
+require("stuart.plugins")
