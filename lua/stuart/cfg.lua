@@ -12,3 +12,4 @@ vim.opt.nu = true
 vim.opt.swapfile = true
 
 vim.g.mapleader = " "
+

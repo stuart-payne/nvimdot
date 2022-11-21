@@ -1,9 +1,9 @@
 local M = require("stuart.keymap")
 local nnoremap = M.nnoremap
-nnmoremap('<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
-nnmoremap('[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
-nnmoremap(']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-nnmoremap('<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>')
+nnoremap('<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
+nnoremap('[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+nnoremap(']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+nnoremap('<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>')
 
 
 local opts = { noremap=true, silent=true }
@@ -31,7 +31,7 @@ end
 
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { 'gopls','rust_analyzer', 'tsserver', 'svelte', 'astro' }
@@ -45,3 +45,4 @@ for _, lsp in pairs(servers) do
     }
   }
 end
+
