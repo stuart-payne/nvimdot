@@ -36,13 +36,18 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 -- map buffer local keybindings when the language server attaches
 local servers = { 'gopls','rust_analyzer', 'tsserver', 'svelte', 'astro' }
 for _, lsp in pairs(servers) do
-  require('lspconfig')[lsp].setup {
+  require('lspconfig')[lsp].setup({
     on_attach = on_attach,
 	capabilities = capabilities,
     flags = {
       -- This will be the default in neovim 0.7+
       debounce_text_changes = 150,
     }
-  }
+  })
 end
 
+vim.filetype.add({
+  extension = {
+    astro = "astro",
+  },
+})
