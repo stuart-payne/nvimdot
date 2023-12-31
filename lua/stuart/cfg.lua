@@ -9,7 +9,7 @@ vim.opt.signcolumn = "auto"
 vim.opt.cmdheight = 2
 vim.opt.smartindent = true
 vim.opt.nu = true
-vim.opt.swapfile = true
+vim.opt.swapfile = false
 
 vim.g.mapleader = " "
 vim.g.do_filetype_lua = 1
