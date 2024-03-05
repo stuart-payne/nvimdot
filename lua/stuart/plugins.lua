@@ -13,15 +13,18 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 require("lazy").setup({
-	"wbthomason/packer.nvim",
 	"folke/tokyonight.nvim",
 	"nvim-lua/plenary.nvim",
-	"neovim/nvim-lspconfig",
 	"nvim-treesitter/nvim-treesitter",
 	"BurntSushi/ripgrep",
 	"nvim-telescope/telescope.nvim",
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/nvim-cmp",
+	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
+	{ "neovim/nvim-lspconfig" },
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/nvim-cmp" },
+	{ "L3MON4D3/LuaSnip" },
+	{ "williamboman/mason.nvim" },
+	{ "williamboman/mason-lspconfig.nvim" },
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -30,18 +33,17 @@ require("lazy").setup({
 		"stevearc/conform.nvim",
 		opts = {},
 	},
-	"L3MON4D3/LuaSnip",
 	"NvChad/nvim-colorizer.lua",
 	"numToStr/Comment.nvim",
 	"lewis6991/gitsigns.nvim",
 	{
-	  "nvim-lualine/lualine.nvim",
-	  dependencies = { "kyazdani42/nvim-web-devicons"}
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "kyazdani42/nvim-web-devicons" },
 	},
 	"catppuccin/nvim",
 	{
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    dependencies = { {"nvim-lua/plenary.nvim"} }
-}
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { { "nvim-lua/plenary.nvim" } },
+	},
 })

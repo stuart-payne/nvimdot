@@ -1,2 +1,2 @@
-require('stuart.plugins')
-require('stuart.cfg')
+require("stuart.plugins")
+require("stuart.cfg")
