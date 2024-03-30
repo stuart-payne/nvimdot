@@ -43,7 +43,7 @@ local capabilities = vim.tbl_deep_extend(
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "gopls", "rust_analyzer", "tsserver", "svelte", "astro", "zig", "clangd" }
+local servers = { "gopls", "rust_analyzer", "tsserver", "svelte", "astro", "zls", "clangd" }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({
 		on_attach = on_attach,
